@@ -5,11 +5,18 @@ def pretty_print(mas):
     print('=' * 10)
 
 
+def get_number_from_index(i, j):
+    return i * 4 + j + 1
+
+
 def get_empty_list(mas):
+    empty = []
     for i in range(4):
         for j in range(4):
             if mas[i][j] == 0:
-                print(i, j)
+                num = get_number_from_index(i, j)
+                empty.append(num)
+    return empty
 
 
 mas = [
@@ -21,5 +28,5 @@ mas = [
 
 mas[1][2] = 2
 mas[3][0] = 4
-get_empty_list(mas)
+print(get_empty_list(mas))
 pretty_print(mas)
